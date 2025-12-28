@@ -1,0 +1,169 @@
+header {
+  margin: 70px 0 50px;
+  font-family: "Serif";
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 5px;
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1;
+  text-decoration: underline;
+  color: darkred;
+}
+
+h2 {
+ color: saddlebrown;
+}
+
+.introduction {
+  margin-top: 30px;
+  font-size: 20px;
+  line-height: 0.8;
+}
+
+body {
+  background: peru;
+}
+
+main {
+  font-family: "Georgia";
+  font-weight: 700;
+}
+
+
+/* Order list container */
+.grid-list {
+  list-style: none;           /* erased the starting number for the list */
+  counter-reset: row -1;      /* starts at 0 */ /*woks better with counter increment inside child elements*/
+  margin: 4rem auto;          /* 1rem=16px */  /* use rem if want to scale when users zoom in  or change size */
+  padding: 1rem;
+  max-width: 900px;
+  border: 5px solid black;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, black, white);
+ }
+
+/* Number before the tittle in the text column */
+.grid-list .text::before {          /* :: pseudoelements — fake elements that CSS can generate inside real elements.They don’t exist in your HTML file. */ 
+  counter-increment: row;           /* adds +1 each row */
+  content: counter(row, upper-roman) ". "; /* displays the number +. and space*/
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: black;                   /* number color */
+  margin-right: 0.5rem;
+}  
+
+/* Each LI is a “row” with two columns */ /*Base card (row) styles */
+.grid-list > .row {   /* just will select the children nested in the grid-list with the selector .row  "not the grandchildren" */
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);  /* image col fixed, text col flexible */
+  gap: 12px 20px;
+  align-items: stretch;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 15px;       /* space between rows */
+  min-height: 140px;         /* consistent row height */
+}
+
+/* Image sizing */
+.grid-list img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;         /* cover: the img fills the box completly cropping anything that doesnt fit */ /* or 'contain: the image fits without cropping */
+  border-radius: 8px;
+}
+
+/* Per-row background overrides (put AFTER the base .row rule) */
+.grid-list > .row.bg-0 { background: white; } /* White */ /*target all elements which belong to both clases row and bg if they would have and space will a just a children inside the parent*/
+.grid-list > .row.bg-1, .grid-list > .row.bg-2, .grid-list > .row.bg-3 { background: whitesmoke; }  /*scales of gray from lighter to stronger */
+.grid-list > .row.bg-4, .grid-list > .row.bg-5, .grid-list > .row.bg-6 { background: gainsboro; } 
+.grid-list > .row.bg-7, .grid-list > .row.bg-8, .grid-list > .row.bg-9 { background: lightgray; } 
+.grid-list > .row.bg-10, .grid-list > .row.bg-11, .grid-list > .row.bg-12 { background: silver; }
+.grid-list > .row.bg-13, .grid-list > .row.bg-14, .grid-list > .row.bg-15 { background: darkgray; } 
+.grid-list > .row.bg-16, .grid-list > .row.bg-17,  .grid-list > .row.bg-18 { background: gray;}
+.grid-list > .row.bg-19, .grid-list > .row.bg-20, .grid-list > .row.bg-21 { background: dimgray; color: white;}
+
+
+.text {
+  padding-top: 20px;
+  padding-left: 25px;
+  }
+
+.title {
+  display: inline-block;
+  font-size: 20px;
+  text-decoration: underline;
+  color: white;
+  background: black;
+}
+
+ul li{
+  padding: 5px;
+}
+ 
+.row.bg-16 .text {
+  family-font: "Georgia";
+  font-size: 18px;
+  font-weight: 700;
+  color: darkred;
+}
+
+.row.bg-16 .title {
+  color: white;
+  background: darkred;
+  margin: 0, auto, 15px;
+  
+ }
+
+.row.bg-17 .title,
+.row.bg-18 .title,
+.row.bg-19 .title,
+.row.bg-20 .title,
+.row.bg-21 .title {
+  color: black;
+  background: white;
+}
+
+
+/* Inside each card, remove default bullets for inner list */
+.grid-list .text ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+/* Add ⭐ before each point in the inner list */
+.grid-list .text ul li::before {
+  content: "⭐ ";
+  color: black;
+  margin-right: 0.3rem;
+}
+
+
+
+.closing-quote {
+  font-family: "Brush Script MT", cursive;
+  font-size: 30px;
+  text-align: center;
+}
+
+footer{
+  margin-top: 100px;
+  margin-bottom: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 17px;
+  line-height: 1.2;
+  text-align: center;
+  border-top: 2px solid black;
+ }
+
+a{
+  font-weight: bold;
+  color: darkblue;
+ }
+
+footer a:hover { /* apply hover to every <a> link inside a <footer> */
+  color: darkred;
+}
