@@ -10,21 +10,21 @@ h1 {
   font-weight: 900;
   line-height: 1;
   text-decoration: underline;
-  color: darkred;
+  color: rgb(18, 10, 91);
 }
 
 h2 {
- color: saddlebrown;
+ color: rgb(51, 17, 190);
 }
 
 .introduction {
   margin-top: 30px;
-  font-size: 20px;
+  font-size: 23px;
   line-height: 0.8;
 }
 
 body {
-  background: peru;
+  background: rgb(27, 131, 127);
 }
 
 main {
@@ -104,7 +104,7 @@ ul li{
 }
  
 .row.bg-16 .text {
-  family-font: "Georgia";
+  font-family: "Georgia";
   font-size: 18px;
   font-weight: 700;
   color: darkred;
@@ -140,11 +140,9 @@ ul li{
   margin-right: 0.3rem;
 }
 
-
-
 .closing-quote {
   font-family: "Brush Script MT", cursive;
-  font-size: 30px;
+  font-size: 35px;
   text-align: center;
 }
 
